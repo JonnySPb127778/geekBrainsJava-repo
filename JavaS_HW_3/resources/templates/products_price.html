@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <h1>Products price list</h1>
+        <br>
+        <span>ID      Title       Cost </span>
+        <div th:each="p : ${products}">
+            <span th:text="${p.id + '.  ' + p.title + '   ' + p.cost + ' rub.'}"/>
+            <a th:href="@{'/products/' + ${p.id}}">more...</a>
+            <br>
+        </div>
+        <span th:text="${'Total number of products: ' + products.size()}"/><br>
+    </body>
+</html>
