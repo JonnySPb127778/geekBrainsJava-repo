@@ -1,4 +1,5 @@
 package com.geekbrains.spring.webjs.data;
+
 import javax.persistence.*;
 
 @Entity
@@ -18,8 +19,10 @@ public class Product {
     @Column(name = "cost")
     private Float cost;
 
+    public Long getId() {
+        return id;
+    }
 
-    public Long getId() { return id; }
     public void setId(Long id) {
         this.id = id;
     }
@@ -27,39 +30,24 @@ public class Product {
     public String getTitle() {
         return title;
     }
+
     public void setTitle(String title) {
         this.title = title;
     }
 
     public String getUnit() { return unit; }
+
     public void setUnit(String unit) { this.unit = unit; }
 
     public Float getCost() {
         return cost;
     }
+
     public void setCost(Float cost) {
         this.cost = cost;
     }
 
     public Product() {
-    }
-/*
-    public Product(Long id, String title, String unit, Float cost) {
-        this.id = id;
-        this.title = title;
-        this.unit = unit;
-        this.cost = cost;
-    }
-   */
-
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", unit='" + unit + '\'' +
-                ", cost=" + cost +
-                '}';
     }
 
 }
